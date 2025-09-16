@@ -1,4 +1,4 @@
-import numpy as np #importing numpy package - change 2
+import numpy as np # importing numpy package for mathematical calculations
 #import sys
 #from __future__ import print_function
 
