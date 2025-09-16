@@ -12,7 +12,7 @@ from matplotlib import style
 style.use('ggplot')
 import numpy as np
 from sklearn.cluster import MeanShift
-from sklearn import preprocessing, cross_validation
+from sklearn import preprocessing, model_selection
 import pandas as pd
 
 url = 'https://pythonprogramming.net/static/downloads/machine-learning-data/titanic.xls'
@@ -24,11 +24,13 @@ original_df = pd.DataFrame.copy(df)
 #print(df.columns.values)
 
 
-df.drop(['body', 'name'], 1 , inplace=True)
+df.drop(['body', 'name'], axis=1 , inplace=True)
 #print(set(df['survived'].values.tolist()))
 
 #print(df.head())
-df.convert_objects(convert_numeric=True)
+#df.convert_objects(convert_numeric=True)
+df = df.apply(pd.to_numeric, errors='ignore')
+
 df.fillna(0, inplace = True)
 
 def handle_non_numerical_data(df):
@@ -61,9 +63,9 @@ def handle_non_numerical_data(df):
 df = handle_non_numerical_data(df)
 #print(df.head())
 
-df.drop(['boat'],1, inplace = True)
+df.drop(['boat'],axis=1, inplace = True)
 
-X = np.array(df.drop(['survived'], 1).astype(float))
+X = np.array(df.drop(['survived'], axis=1).astype(float))
 X = preprocessing.scale(X)
 
 
