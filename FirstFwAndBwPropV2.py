@@ -8,7 +8,7 @@ y = np.array([[0,1,1,0]]).T
 syn0 = 2*np.random.random((3,4)) - 1
 syn1 = 2*np.random.random((4,1)) - 1
 
-l1 = 1/(1+np.exp(-(np.dot(X,syn0))))
+l1 = 1/(1+np.exp(-(np.dot(X,syn0)))) # sigmoid function
 print(X)
 print(syn0)
 print(syn1)
