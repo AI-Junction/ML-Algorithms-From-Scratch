@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np #importing numpy package
 #import sys
 #from __future__ import print_function
 
