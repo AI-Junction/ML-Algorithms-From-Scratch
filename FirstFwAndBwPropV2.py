@@ -2,7 +2,8 @@ import numpy as np # importing numpy package for mathematical calculations
 #import sys
 #from __future__ import print_function
 
-X = np.array([ [0,0,1],[0,1,1],[1,0,1],[1,1,1] ])
+#X = np.array([ [0,0,1],[0,1,1],[1,0,1],[1,1,1] ])
+X = np.array([ [0,0,1],[0,1,1],[1,0,1],[1,1,1] ]) #checking this change now
 y = np.array([[0,1,1,0]]).T
 syn0 = 2*np.random.random((3,4)) - 1
 syn1 = 2*np.random.random((4,1)) - 1
