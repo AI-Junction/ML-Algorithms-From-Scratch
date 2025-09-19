@@ -65,7 +65,7 @@ def k_nearest_neighbors(data, predict, k=3):
 url = 'https://raw.githubusercontent.com/nrkfeller/machinelearningnotes/master/breast-cancer-wisconsin.data.txt'
 df = pd.read_csv(url)
 df.replace('?', -99999, inplace = True)
-df.drop(['id'],1,inplace = True)
+df.drop(['id'],axis=1,inplace = True)
 full_data = df.astype(float).values.tolist()
 print(full_data[:5])
 print(len(full_data))
